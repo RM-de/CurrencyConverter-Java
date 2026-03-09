@@ -75,7 +75,7 @@ public class Main {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 40, 5, 40);
-        Dimension feldGroße = new Dimension(280, 32);
+        Dimension feldGroße = new Dimension(400, 40);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         text = new JLabel("Währung Rechnen");
@@ -89,23 +89,25 @@ public class Main {
         JComboBox<String> box1 = new JComboBox<>(Währungen);
         box1.setPreferredSize(feldGroße);
         box1.setMaximumRowCount(20);
+        box1.setFont(new Font("Arial" , Font.PLAIN,14));
 
         JComboBox<String> box2 = new JComboBox<>(Währungen);
         box2.setPreferredSize(feldGroße);
         box2.setMaximumRowCount(20);
+        box2.setFont(new Font("Arial" , Font.PLAIN,14));
 
         betragField = new JTextField();
         betragField.setPreferredSize(feldGroße);
-        betragField.setFont(new Font("Arial", Font.PLAIN, 15));
+        betragField.setFont(new Font("Arial", Font.PLAIN, 16));
 
         JTextField ergebnisField = new JTextField("Ergebnis:");
-        ergebnisField.setFont(new Font("Arial", Font.PLAIN, 15));
+        ergebnisField.setFont(new Font("Arial", Font.PLAIN, 16));
         ergebnisField.setPreferredSize(feldGroße);
         ergebnisField.setEditable(false);
         ergebnisField.setBackground(Color.WHITE);
 
         bemerkungsField = new JTextField("Bemerkungen:");
-        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 14));
+        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 15));
         bemerkungsField.setPreferredSize(feldGroße);
         bemerkungsField.setEditable(false);
         bemerkungsField.setBackground(Color.WHITE);
@@ -126,13 +128,13 @@ public class Main {
                     double kurs = getWechselkurs(von, zu);
                     double ergebnis = zahl * kurs;
 
-                    String klickZeit = new java.text.SimpleDateFormat("dd.MM-HH:mm").format(new java.util.Date());
+                    String klickZeit = new java.text.SimpleDateFormat("dd.MM.yyyy - HH:mm").format(new java.util.Date());
                     String statusAnzeige = istLive ? " (Live)" : " ( Nicht aktuell ) ";
 
                     if (istLive) {
                         bemerkungsField.setText("(Stand: " + klickZeit + " Uhr)");
                     } else {
-                        bemerkungsField.setText(" Stand " +  zeitstempel + " Uhr (du bist offline)");
+                        bemerkungsField.setText(" Stand " +  zeitstempel + " Uhr (Du bist offline)");
                     }
                     ergebnisField.setText(String.format(" %.4f ", ergebnis) + " " + zu + " " + statusAnzeige);
                     System.out.println(" Klick um : " + klickZeit + " Ergebnis berechnet!");
@@ -149,14 +151,14 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(30, 40, 5, 40);
+        gbc.insets = new Insets(30, 45, 5, 45);
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
         gbc.weighty = 0.0;
         frame.add(text, gbc);
 
-        gbc.insets = new Insets(5, 40, 5, 40);
+        gbc.insets = new Insets(5, 45, 5, 45);
         gbc.gridx = 0;
         gbc.gridy = 1;
         text.setHorizontalAlignment(JLabel.CENTER);
@@ -167,7 +169,7 @@ public class Main {
         gbc.weighty = 0.0;
         frame.add(box1, gbc);
 
-        gbc.insets = new Insets(5, 40, 5, 40);
+        gbc.insets = new Insets(5, 45, 5, 45);
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
@@ -202,7 +204,7 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 6;
-        gbc.insets = new Insets(5, 40, 50, 40);
+        gbc.insets = new Insets(5, 45, 60, 45);
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
