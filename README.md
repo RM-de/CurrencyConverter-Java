@@ -29,5 +29,6 @@ Rechenen von Währungen im Online Status / Currency conversion in online status.
 Rechenen von Währungen im Offline Status / Currency conversion in offline mode.
 ![Offline-Mode](screenshot4.png)
 
+
 ## 🛠 Setup
 Das Projekt nutzt **Maven**. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
