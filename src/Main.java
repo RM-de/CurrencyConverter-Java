@@ -135,7 +135,7 @@ public class Main {
                     } else {
                         bemerkungsField.setText(" Stand " +  zeitstempel + " Uhr (Du bist offline)");
                     }
-                    ergebnisField.setText(String.format(" %.4f ", ergebnis) + " " + zu + " " + statusAnzeige);
+                    ergebnisField.setText(String.format(" %.2f ", ergebnis) + " " + zu + " " + statusAnzeige);
                     System.out.println(" Klick um : " + klickZeit + " Ergebnis berechnet!");
 
                     Color anzeigeFarbe = istLive ? new Color(0, 150, 0) : Color.RED;
