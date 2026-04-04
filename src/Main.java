@@ -11,10 +11,10 @@ import java.util.Map;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
+
 public class Main {
     static Map<String, Double> wechselkurse = new HashMap<>();
     private static boolean istLive = false;
-    static String dateAlter = "00.00 00.00";
     private static String zeitstempel = "unbekannt";
     static String[] Währungen = {"EUR", "USD", "GBP", "JPY", "CZK", "CHF", "CNY", "AUD", "CAD", "HKD", "NZD", "TRY", "SGD", "BRL",
             "KRW", "INR", "PLN", "SEK", "MXN", "DKK", "HUF", "RON", "ISK", "NOK", "IDR", "ILS", "MYR", "PHP", "THB", "ZAR"};
@@ -55,7 +55,6 @@ public class Main {
             java.time.LocalDateTime jetzt = java.time.LocalDateTime.now();
             java.time.format.DateTimeFormatter formater = java.time.format.DateTimeFormatter.ofPattern("dd.MM-HH:mm");
             zeitstempel = jetzt.format(formater);
-            dateAlter = zeitstempel;
             speichereKurseLokal();
             System.out.println("[System] Verbindung erfolgreich: " + wechselkurse.size() / 2 + " Handelspaare geladen.");
         } catch (Exception e) {
