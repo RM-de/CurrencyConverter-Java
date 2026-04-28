@@ -28,7 +28,7 @@ Currency List
 Online-Mode
 <img width="715" height="712" alt="screenshot3" src="https://github.com/user-attachments/assets/f8618eb7-184e-414b-bca8-c89689add6ad" />
 
-offline-Mode 
+Offline-Mode 
 <img width="711" height="720" alt="screenshot4" src="https://github.com/user-attachments/assets/df608f00-3cec-4fe8-b730-f01965f47744" />
 
 Error Handling 
