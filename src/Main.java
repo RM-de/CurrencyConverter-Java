@@ -22,8 +22,8 @@ public class Main {
     static Map<String, Double> wechselkurse = new HashMap<>();
     private static boolean istLive = false;
     private static String zeitstempel = " 00.00.0000 - 00.00 ";
-    static String[] Währungen = {" EUR", "USD", "AUD", "BRL", "CAD", "CHF","CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
-                 "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR" };
+    static String[] Währungen = {" EUR", " USD", " AUD", " BRL", " CAD", " CHF"," CNY", " CZK", " DKK", " GBP", " HKD", " HUF", " IDR", " ILS",
+                 " INR", " ISK", " JPY", " KRW", " MXN", " MYR", " NOk", " NZD", " PHP", " PLN", " RON", " SEK", " SGD", " THB", " TRY", " ZAR" };
     static JFrame frame;
     static JLabel text;
     static JTextField betragField;
@@ -89,7 +89,7 @@ public class Main {
         text.setHorizontalAlignment(JLabel.CENTER);
         text.setFont(new Font("Arial", Font.BOLD, 20));
         text.setPreferredSize(feldGroße);
-        Color denimBlue = new Color(5, 45, 60);
+        Color denimBlue = new Color(30, 80, 100);
         frame.getContentPane().setBackground(denimBlue);
         ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 
