@@ -38,3 +38,5 @@ Error Handling
 🛠 Setup
 
 Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
+
+Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
