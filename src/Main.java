@@ -21,7 +21,7 @@ public class Main {
 
     static Map<String, Double> wechselkurse = new HashMap<>();
     private static boolean istLive = false;
-    private static String zeitstempel = " 00.00.0000 - 00.00 ";
+    private static String zeitstempel= " 00.00.0000 - 00.00 ";
     static String[] Währungen = {" EUR", " USD", " AUD", " BRL", " CAD", " CHF"," CNY", " CZK", " DKK", " GBP", " HKD", " HUF", " IDR", " ILS",
                  " INR", " ISK", " JPY", " KRW", " MXN", " MYR", " NOk", " NZD", " PHP", " PLN", " RON", " SEK", " SGD", " THB", " TRY", " ZAR" };
     static JFrame frame;
@@ -146,7 +146,7 @@ public class Main {
                     if (istLive) {
                         bemerkungsField.setText(" Stand: " + klickZeit + " Uhr ");
                     } else {
-                        bemerkungsField.setText(" Stand " +  zeitstempel + " Uhr ( Du bist offline )");
+                        bemerkungsField.setText(" Stand " + zeitstempel  + " Uhr ( Du bist offline )");
                     }
                     ergebnisField.setText(String.format(" %.2f ", ergebnis) + " " + zu + " " + statusAnzeige);
                     System.out.println(" Klick um : " + klickZeit + " Ergebnis berechnet!");
@@ -279,11 +279,11 @@ public class Main {
 
                 wechselkurse = gson.fromJson(kurseJson, type);
             }
-            System.out.println(" Cache erfolgreich geladen! Stand von: " + zeitstempel);
+            System.out.println(" Cache erfolgreich geladen! Stand von: " + zeitstempel );
 
         } catch (Exception e) {
             System.out.println(" Fehler beim Laden des Caches: " + e.getMessage());
-            if (zeitstempel == null || zeitstempel.isEmpty());  {
+            if ( zeitstempel == null || zeitstempel .isEmpty());  {
                 zeitstempel = " unbekannt ";
             }
         }
