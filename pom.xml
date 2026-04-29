@@ -24,7 +24,7 @@
         <finalName>CurrencyConverter</finalName>
         <plugins>
             <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
