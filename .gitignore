@@ -30,3 +30,6 @@ bin/
 .DS_Store
 target/
 *.jar
+kurse_cache.json
+.idea/
+*.iml
