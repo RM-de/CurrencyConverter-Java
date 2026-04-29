@@ -74,7 +74,6 @@ public class Main {
             }
         }
     }
-
     public static void openUI() {
 
         frame = new JFrame("Währungsrechner!");
