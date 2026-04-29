@@ -282,6 +282,7 @@ public class Main {
             System.out.println(" Cache erfolgreich geladen! Stand von: " + zeitstempel );
 
         } catch (Exception e) {
+
             System.out.println(" Fehler beim Laden des Caches: " + e.getMessage());
             if ( zeitstempel == null || zeitstempel .isEmpty());  {
                 zeitstempel = " unbekannt ";
