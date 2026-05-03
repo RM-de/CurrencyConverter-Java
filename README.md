@@ -27,10 +27,10 @@ Netzwerkschnittstellen zu visualisieren.
 
 • Version: v2.3.8 (Stable)
 
+🛠 Setup
 Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
 
-Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
-
+------------------------------------------------------------------------------------------------------------------------------------
 
 🇺🇸 English
 
@@ -61,6 +61,7 @@ visualize concepts such as data caching and network interfaces.
 
 • Version: v2.3.8 (Stable)
 
+🛠 Setup
 The project uses Maven. Simply open it in IntelliJ - all dependencies (JSON) will load automatically.
 
 ### 📸 Screenshots
@@ -100,5 +101,3 @@ Error Handling<br>
 🛠 Setup
 
 Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
-
-Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
