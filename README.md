@@ -19,9 +19,10 @@ Smart Caching: GSON-powered offline mode for conversions without internet access
 
 📸 Screenshots
 
-!{Alt-Text}(<p allgin= "center">
+![Alt-Text](<p algin= "center">
 <b>UI CurrencyConverter</b><br>
-<img scr="https://github.com/RM-de/CurrencyConverter-Java/raw/main/dein-bild.png"></p>)
+<img src="https://github.com/RM-de/CurrencyConverter-Java/raw/main/dein-bild.png"></p>)
+
 
 UI CurrencyConverter
 <img width="730" height="703" alt="screenshot1" src="https://github.com/user-attachments/assets/dc6ad0c5-2c51-4c19-bba7-81a6004ffb1e" />
