@@ -35,16 +35,16 @@ Currency List<br>
 <img width="722" height="735" alt="screenshot2" src="https://github.com/user-attachments/assets/8713a6d1-4639-450c-ba86-7452a77907b5" />
 
 
-<p align="center">
+<p align="center" id= "online-screensho3">
 Online-Mode<br>
 <img width="715" height="712" alt="screenshot3" src="https://github.com/user-attachments/assets/f8618eb7-184e-414b-bca8-c89689add6ad" />
 
 
-<p align="center">
+<p align="center" id= "online-screenshot4">
 Offline-Mode<br>
 <img width="711" height="720" alt="screenshot4" src="https://github.com/user-attachments/assets/df608f00-3cec-4fe8-b730-f01965f47744" />
 
-<p align="center">
+<p align="center" id= "error-screenshot5">
 Error Handling<br>
 <img width="711" height="704" alt="screenshot5" src="https://github.com/user-attachments/assets/14657166-9b19-4c22-9d65-b91f0cde2a93" />
 
