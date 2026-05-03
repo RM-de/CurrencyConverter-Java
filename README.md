@@ -3,7 +3,8 @@
 Ein effizienter Währungsrechner mit Echtzeit-Kursen und intelligentem Offline-Cache.
 
 ✨ Features 🇩🇪 (Deutsch)
-Robustheit: Die App ist absturzsicher! Bei falschen Eingaben (Buchstaben statt Zahlen) stürzt das Programm nicht ab, sondern gibt klare Anweisungen.
+Robustheit: Die App ist absturzsicher! Bei falschen Eingaben (Buchstaben statt Zahlen) stürzt das Programm nicht ab, 
+sondern gibt klare Anweisungen.
 Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
 Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
@@ -22,6 +23,9 @@ Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
 • Version: v2.3.8 (Stable)
 
+Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
+
+Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
 
 ✨ Features 🇺🇸 (English)
 Crash-Proof: Handles invalid inputs (letters or symbols) gracefully without crashing.
@@ -41,6 +45,7 @@ Smart Caching: GSON-powered offline mode for conversions without internet access
 
 • Version: v2.3.8 (Stable
 
+The project uses Maven. Simply open it in IntelliJ - all dependencies (JSON) will load automatically.
 
 ### 📸 Screenshots
 
