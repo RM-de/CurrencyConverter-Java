@@ -16,9 +16,9 @@ Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
 🛠 Technische Details
 • Sprache: Java
-• Framework: Swing (GUI)
-• Layout: GridBagLayout für eine präzise Anordnung der Komponenten.
-• Build-Tool: Maven (pom.xml)
+  • Framework: Swing (GUI)
+    • Layout: GridBagLayout für eine präzise Anordnung der Komponenten.
+      • Build-Tool: Maven (pom.xml)
 • Workflows Actions: (maven.yml) - (release.yml)
 • Version: v2.3.8 (Stable)
 
