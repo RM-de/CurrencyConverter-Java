@@ -7,11 +7,27 @@ Robustheit: Die App ist absturzsicher! Bei falschen Eingaben (Buchstaben statt Z
 Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
 Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
+🛠 Technische Details
+• Sprache: Java
+• Framework: Swing (GUI)
+• Layout: GridBagLayout für eine präzise Anordnung der Komponenten.
+• Build-Tool: Maven (pom.xml)
+• Version: v2.3.8 (Stable)
+
 
 ✨ Features 🇺🇸 (English)
 Crash-Proof: Handles invalid inputs (letters or symbols) gracefully without crashing.
 Real-time Rates: Integrated API for up-to-date currency data.
 Smart Caching: GSON-powered offline mode for conversions without internet access.
+
+• 🛠 Technical Details
+
+• Language: Java
+• Framework: Swing (GUI)
+• Layout: GridBagLayout for precise component positioning.
+• Build-Tool: Maven (pom.xml)
+• Version: v2.3.8 (Stable
+
 
 ### 📸 Screenshots
 
