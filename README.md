@@ -15,7 +15,7 @@ Smart Caching: GSON-powered offline mode for conversions without internet access
 
 ### 📸 Screenshots
 
-* 🔜[UI CurrencyConverter](#ui-screenshot1)
+* 🔜[UI CurrencyConverter](*ui-screenshot1)
 
 * 🔜 [ Currency List](#list-screenshot2)
 
