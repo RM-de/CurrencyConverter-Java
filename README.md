@@ -75,8 +75,8 @@ The project uses Maven. Simply open it in IntelliJ - all dependencies (JSON) wil
 * 🔜[Online-Mode](#online-screenshot3)
 
 * 🔜[Offline-Mode](#offline-screenshot4)
-
-*🔜 [ Error Handling](#error-screenshot5)
+  
+* 🔜 [ Error Handling](#error-screenshot5)
 
 
 <p align="center" id = "ui-screenshot1" >
