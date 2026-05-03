@@ -15,27 +15,36 @@ Smart Caching: GSON-powered offline mode for conversions without internet access
 
 📸 Screenshots
 
+![CurrencyConverter]screenshot1
+
+![CurrencyListe]screenshot2
+
+![Online-Mode]screenshot3
+
+![Offline-MOde]screenshot4
+
+![Error Handling]screenshot5
 
 
-<p algin="center">
+<p align="center">
 UI CurrencyConverter<br>
 <img width="730" height="703" alt="screenshot1" src="https://github.com/user-attachments/assets/dc6ad0c5-2c51-4c19-bba7-81a6004ffb1e" />
 
-<p algin="center">
+<p align="center">
 Currency List<br>
 <img width="722" height="735" alt="screenshot2" src="https://github.com/user-attachments/assets/8713a6d1-4639-450c-ba86-7452a77907b5" />
 
 
-<p algin="center">
+<p align="center">
 Online-Mode<br>
 <img width="715" height="712" alt="screenshot3" src="https://github.com/user-attachments/assets/f8618eb7-184e-414b-bca8-c89689add6ad" />
 
 
-<p algin="center">
+<p align="center">
 Offline-Mode<br>
 <img width="711" height="720" alt="screenshot4" src="https://github.com/user-attachments/assets/df608f00-3cec-4fe8-b730-f01965f47744" />
 
-<p algin="center">
+<p align="center">
 Error Handling<br>
 <img width="711" height="704" alt="screenshot5" src="https://github.com/user-attachments/assets/14657166-9b19-4c22-9d65-b91f0cde2a93" />
 
