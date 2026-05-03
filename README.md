@@ -43,7 +43,7 @@ visualize concepts such as data caching and network interfaces.
 ✨Highlight
 
 * Robustness: The app is crash-proof! If incorrect entries are made (letters instead of numbers), 
-  the program dosn't crash, but instead gives clear instructions.
+  the program doesn't crash, but instead gives clear instructions.
 * Live-data: Uses an API for current exchange rates.
 * Offline mode: Works even without an internet connection thank to GSON caching.
 
