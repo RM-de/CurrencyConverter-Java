@@ -33,6 +33,7 @@ Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
 
 
 🇺🇸 English
+
 A highly efficient currency calculator with a graphical user interface (Swing) that demonstrates modern 
 software architecture and real-time API connectivity.
 The application was developed to the rigorous standards of a computer science currculum in order to 
