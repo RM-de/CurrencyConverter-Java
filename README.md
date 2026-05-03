@@ -2,17 +2,17 @@
 
 🇩🇪 Deutsch 
 
-Eine hocheffizienter Weahrungsrechner mit grafischesr Benutzeroberfläche (Swing), der moderne 
+Eine hocheffizienter Weahrungsrechner mit grafischer Benutzeroberfläche (Swing), der moderne 
 Software-Architektur und Echtzeit-API-Anbindung demonstriert. 
 Der App wurde auf anspruchsvolle Niveau eines Informatikstudiums entwickelt, um Konzepte wie Daten-Caching und 
 Netzwerkschnittstellen zu visualisieren.
 
-✨Heighlight
+✨Highlight
 
-Robustheit: Die App ist absturzsicher! Bei falschen Eingaben (Buchstaben statt Zahlen) stürzt das Programm nicht ab, 
-sondern gibt klare Anweisungen.
-Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
-Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
+* Robustheit: Die App ist absturzsicher! Bei falschen Eingaben (Buchstaben statt Zahlen) stürzt das Programm
+  nicht ab, sondern gibt klare Anweisungen.
+* Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
+* Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
 🛠 Technische Details
 • Sprache: Java
@@ -35,14 +35,15 @@ Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
 🇺🇸 English
 A highly efficient currency calculator with a graphical user interface (Swing) that demonstrates modern 
 software architecture and real-time API connectivity.
-The application was developed to the rigorous standarts of a computer science currculum in order to 
+The application was developed to the rigorous standards of a computer science currculum in order to 
 visualize concepts such as data caching and network interfaces.
 
-✨Heighlight
-Robustness: The app is crash-proof! If incorrect entries are made (letters instead of numbers), 
-the program dosn't crash, but instead gives clear instructions.
-Live-data: Uses an API for current exchange rates.
-Offline mode: Works even without an internet connection thank to GSON caching.
+✨Highlight
+
+* Robustness: The app is crash-proof! If incorrect entries are made (letters instead of numbers), 
+  the program dosn't crash, but instead gives clear instructions.
+* Live-data: Uses an API for current exchange rates.
+* Offline mode: Works even without an internet connection thank to GSON caching.
 
 
 • 🛠 Technical Details
@@ -82,11 +83,9 @@ UI CurrencyConverter<br>
 Currency List<br>
 <img width="722" height="735" alt="screenshot2" src="https://github.com/user-attachments/assets/8713a6d1-4639-450c-ba86-7452a77907b5" />
 
-
 <p align="center" id= "online-screenshot3">
 Online-Mode<br>
 <img width="715" height="712" alt="screenshot3" src="https://github.com/user-attachments/assets/f8618eb7-184e-414b-bca8-c89689add6ad" />
-
 
 <p align="center" id= "offline-screenshot4">
 Offline-Mode<br>
