@@ -13,17 +13,17 @@ Crash-Proof: Handles invalid inputs (letters or symbols) gracefully without cras
 Real-time Rates: Integrated API for up-to-date currency data.
 Smart Caching: GSON-powered offline mode for conversions without internet access.
 
-📸 Screenshots
+### 📸 Screenshots
 
-![CurrencyConverter]screenshot1
+* [UI CurrencyConverter](*ui-screenshot1)
 
-![CurrencyListe]screenshot2
+* [Currency List](*list-screenshot2)
 
-![Online-Mode]screenshot3
+* [Online-Mode](*online-screenshot3)
 
-![Offline-MOde]screenshot4
+* [Offline-MOde](*offline-screenshot4)
 
-![Error Handling]screenshot5
+* [Error Handling](*error-screenshot5)
 
 
 <p align="center">
