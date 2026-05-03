@@ -40,7 +40,7 @@ Online-Mode<br>
 <img width="715" height="712" alt="screenshot3" src="https://github.com/user-attachments/assets/f8618eb7-184e-414b-bca8-c89689add6ad" />
 
 
-<p align="center" id= "online-screenshot4">
+<p align="center" id= "offline-screenshot4">
 Offline-Mode<br>
 <img width="711" height="720" alt="screenshot4" src="https://github.com/user-attachments/assets/df608f00-3cec-4fe8-b730-f01965f47744" />
 
