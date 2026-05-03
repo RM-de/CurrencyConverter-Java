@@ -1,49 +1,52 @@
 💱 Currency Converter (Java)
 
-Ein effizienter Währungsrechner mit Echtzeit-Kursen und intelligentem Offline-Cache.
+🇩🇪 Deutsch 
 
-✨ Features 🇩🇪 (Deutsch)
+Eine hocheffizienter Weahrungsrechner mit grafischesr Benutzeroberfläche (Swing), der moderne 
+Software-Architektur und Echtzeit-API-Anbindung demonstriert. 
+Der App wurde auf anspruchsvolle Niveau eines Informatikstudiums entwickelt, um Konzepte wie Daten-Caching und 
+Netzwerkschnittstellen zu visualisieren.
+
+✨Heighlight
+
 Robustheit: Die App ist absturzsicher! Bei falschen Eingaben (Buchstaben statt Zahlen) stürzt das Programm nicht ab, 
 sondern gibt klare Anweisungen.
 Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
 Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
-
 🛠 Technische Details
-
 • Sprache: Java
-
 • Framework: Swing (GUI)
-
 • Layout: GridBagLayout für eine präzise Anordnung der Komponenten.
-
 • Build-Tool: Maven (pom.xml)
-
 • Workflows Actions: (maven.yml) - (release.yml)
-
 • Version: v2.3.8 (Stable)
 
 Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
 
 Zuletz aktualisiert am: 29.04.2026(Automatischer Release-Test)
 
-✨ Features 🇺🇸 (English)
-Crash-Proof: Handles invalid inputs (letters or symbols) gracefully without crashing.
-Real-time Rates: Integrated API for up-to-date currency data.
-Smart Caching: GSON-powered offline mode for conversions without internet access.
+
+🇺🇸 English
+A highly efficient currency calculator with a graphical user interface (Swing) that demonstrates modern 
+software architecture and real-time API connectivity.
+The application was developed to the rigorous standarts of a computer science currculum in order to 
+visualize concepts such as data caching and network interfaces.
+
+✨Heighlight
+Robustness: The app is crash-proof! If incorrect entries are made (letters instead of numbers), 
+the program dosn't crash, but instead gives clear instructions.
+Live-data: Uses an API for current exchange rates.
+Offline mode: Works even without an internet connection thank to GSON caching.
 
 
 • 🛠 Technical Details
-
 • Language: Java
-
 • Framework: Swing (GUI)
-
 • Layout: GridBagLayout for precise component positioning.
-
 • Build-Tool: Maven (pom.xml)
-
-• Version: v2.3.8 (Stable
+• Workflows Actions: (maven.yml) - (release.yml)
+• Version: v2.3.8 (Stable)
 
 The project uses Maven. Simply open it in IntelliJ - all dependencies (JSON) will load automatically.
 
