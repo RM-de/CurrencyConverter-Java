@@ -21,7 +21,7 @@ Smart Caching: GSON-powered offline mode for conversions without internet access
 
 * [🔜-Mode](#online-screenshot3)
 
-* [🔜-MOde](#offline-screenshot4)
+* [🔜-Mode](#offline-screenshot4)
 
 * [🔜 Handling](#error-screenshot5)
 
