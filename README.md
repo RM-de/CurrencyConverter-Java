@@ -35,7 +35,7 @@ Currency List<br>
 <img width="722" height="735" alt="screenshot2" src="https://github.com/user-attachments/assets/8713a6d1-4639-450c-ba86-7452a77907b5" />
 
 
-<p align="center" id= "online-screensho3">
+<p align="center" id= "online-screenshot3">
 Online-Mode<br>
 <img width="715" height="712" alt="screenshot3" src="https://github.com/user-attachments/assets/f8618eb7-184e-414b-bca8-c89689add6ad" />
 
