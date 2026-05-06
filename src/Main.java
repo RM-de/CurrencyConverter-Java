@@ -1,3 +1,5 @@
+
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
@@ -11,9 +13,6 @@ import java.util.Map;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
-import com.google.gson.Gson;
-import org.w3c.dom.css.RGBColor;
-import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
 
@@ -21,9 +20,9 @@ public class Main {
 
     static Map<String, Double> wechselkurse = new HashMap<>();
     private static boolean istLive = false;
-    private static String zeitstempel= " 00.00.0000 - 00.00 ";
-    static String[] Währungen = {" EUR", " USD", " AUD", " BRL", " CAD", " CHF"," CNY", " CZK", " DKK", " GBP", " HKD", " HUF", " IDR", " ILS",
-                 " INR", " ISK", " JPY", " KRW", " MXN", " MYR", " NOk", " NZD", " PHP", " PLN", " RON", " SEK", " SGD", " THB", " TRY", " ZAR" };
+    private static String zeitstempel = "unbekannt";
+    static String[] Währungen = {"EUR", "USD", "AUD", "BRL", "CAD", "CHF","CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
+            "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR" };
     static JFrame frame;
     static JLabel text;
     static JTextField betragField;
@@ -90,12 +89,7 @@ public class Main {
         text.setPreferredSize(feldGroße);
         Color denimBlue = new Color(30, 80, 100);
         frame.getContentPane().setBackground(denimBlue);
-        ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
-
-        JComboBox<String> box1 = new JComboBox<>(Währungen);
-        box1.setPreferredSize(feldGroße);
-        box1.setMaximumRowCount(20);
-        box1.setFont(new Font("Arial" , Font.PLAIN,14));
+        ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,5));
 
         betragField = new JTextField();
         betragField.setPreferredSize(feldGroße);
@@ -104,11 +98,18 @@ public class Main {
         Border abstand = BorderFactory.createEmptyBorder(0,7,0,0);
         betragField.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
 
+        JComboBox<String> box1 = new JComboBox<>(Währungen);
+        box1.setPreferredSize(feldGroße);
+        box1.setMaximumRowCount(20);
+        box1.setFont(new Font("Arial" , Font.PLAIN,14));
+        box1.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
+
         JComboBox<String> box2 = new JComboBox<>(Währungen);
         box2.setPreferredSize(feldGroße);
         box2.setMaximumRowCount(20);
         box2.setFont(new Font("Arial" , Font.PLAIN,14));
         box2.setBorder(null);
+        box2.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
 
         JTextField ergebnisField = new JTextField(" Ergebnis:");
         ergebnisField.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -166,7 +167,7 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(30, 45, 5, 45);
+        gbc.insets = new Insets(30, 50, 5,50 );
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
@@ -176,7 +177,7 @@ public class Main {
         gbc.gridx = 0;
         gbc.gridy = 1;
         text.setHorizontalAlignment(JLabel.CENTER);
-        gbc.insets = new Insets(5, 45, 5, 45);
+        gbc.insets = new Insets(5, 50, 5,50 );
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
@@ -217,15 +218,18 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 6;
-        gbc.insets = new Insets(5, 45, 60, 45);
+        gbc.insets = new Insets(5, 50, 30, 50);
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
         gbc.weighty = 0.0;
         frame.add(button, gbc);
 
+        frame.setUndecorated(true);
+
         frame.pack();
         frame.setLocationRelativeTo(null);
+
         betragField.requestFocusInWindow();
         frame.setVisible(true);
     }
@@ -241,7 +245,7 @@ public class Main {
         String eurZuZiel = "EUR_" + zu;
         if (wechselkurse.containsKey(vonZuEur) &&
                 wechselkurse.containsKey(eurZuZiel)) {
-          return  wechselkurse.get(vonZuEur) * wechselkurse.get(eurZuZiel);
+            return  wechselkurse.get(vonZuEur) * wechselkurse.get(eurZuZiel);
         }
         return 1.0;
     }
