@@ -1,5 +1,3 @@
-
-
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
@@ -14,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 import javax.swing.border.Border;
-
 
 public class Main {
 
@@ -89,7 +86,7 @@ public class Main {
         text.setPreferredSize(feldGroße);
         Color denimBlue = new Color(30, 80, 100);
         frame.getContentPane().setBackground(denimBlue);
-        ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,5));
+        ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
 
         betragField = new JTextField();
         betragField.setPreferredSize(feldGroße);
@@ -218,14 +215,12 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 6;
-        gbc.insets = new Insets(5, 50, 30, 50);
+        gbc.insets = new Insets(5, 50, 60, 50);
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
         gbc.weighty = 0.0;
         frame.add(button, gbc);
-
-        frame.setUndecorated(true);
 
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -233,7 +228,6 @@ public class Main {
         betragField.requestFocusInWindow();
         frame.setVisible(true);
     }
-
     public static double getWechselkurs(String von, String zu) {
         if (von.equals(zu))
             return 1.0;
