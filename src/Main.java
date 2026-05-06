@@ -215,7 +215,7 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 6;
-        gbc.insets = new Insets(5, 50, 60, 50);
+        gbc.insets = new Insets(5, 50, 58, 50);
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
