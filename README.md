@@ -15,6 +15,7 @@ Netzwerkschnittstellen zu visualisieren.
 * Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
 
 🛠 Technische Details
+
 • Sprache: Java
 
 • Framework: Swing (GUI)
@@ -25,7 +26,6 @@ Netzwerkschnittstellen zu visualisieren.
 
 • Workflows Actions: (maven.yml) - (release.yml)
 
-• Version: v2.3.8 (Stable)
 
 🛠 Setup
 
@@ -60,7 +60,6 @@ visualize concepts such as data caching and network interfaces.
 
 • Workflows Actions: (maven.yml) - (release.yml)
 
-• Version: v2.3.8 (Stable)
 
 🛠 Setup
 
