@@ -18,8 +18,8 @@ public class Main {
     static Map<String, Double> wechselkurse = new HashMap<>();
     private static boolean istLive = false;
     private static String zeitstempel = "unbekannt";
-    static String[] Währungen = {"EUR", "USD", "AUD", "BRL", "CAD", "CHF","CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
-            "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR" };
+    static String[] Währungen = {"EUR", "USD", "AUD", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
+                   "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR"};
     static JFrame frame;
     static JLabel text;
     static JTextField betragField;
@@ -29,15 +29,38 @@ public class Main {
 
 
     public static void main(String[] args) {
-        try {
-            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (Exception e) {
+
+        SwingUtilities.invokeLater(() -> {
+       try {
+           javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getCrossPlatformLookAndFeelClassName());
+       } catch (Exception e) {
             e.printStackTrace();
         }
-        initialisiereKurs();
         openUI();
+        ladeKurseImHintergrund();
+        });
     }
+    private static void ladeKurseImHintergrund() {
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
 
+            @Override
+            protected Void doInBackground() throws Exception {
+                initialisiereKurs();
+                return null;
+            }
+            @Override
+            protected void done() {
+                if (istLive) {
+                    bemerkungsField.setText("Kurse geladen! Stand: " + zeitstempel);
+                    bemerkungsField.setForeground(new Color(0, 150, 0));
+                } else {
+                    bemerkungsField.setText(" Stand: " + zeitstempel + "( du bist offline )");
+                    bemerkungsField.setForeground(Color.RED);
+                }
+            }
+        };
+            worker.execute();
+    }
     public static void initialisiereKurs() {
         try {
             URL url = new URL("https://api.frankfurter.app/latest?from=EUR");
