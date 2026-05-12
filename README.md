@@ -22,7 +22,7 @@ Netzwerkschnittstellen zu visualisieren.
 
 • Framework: Swing (GUI)
 
-• Asynchrones Laden: Entlasstung der Event Dispatch Thereade (EDT) durch asynchrone API-Abfrage. 
+• Asynchrones Laden: Entlasstung der Event Dispatch Threade (EDT) durch asynchrone API-Abfrage. 
 
 • Layout: GridBagLayout für eine präzise Anordnung der Komponenten.
 
@@ -59,7 +59,7 @@ visualize concepts such as data caching and network interfaces.
 
 • Framework: Swing (GUI)
 
-• Asynchronous Loading: Offloading network tasks from the Event Dispatch Theread (EDT) for a smooth user experience.
+• Asynchronous Loading: Offloading network tasks from the Event Dispatch Thread (EDT) for a smooth user experience.
 
 • Layout: GridBagLayout for precise component positioning.
 
