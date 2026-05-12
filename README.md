@@ -13,7 +13,7 @@ Netzwerkschnittstellen zu visualisieren.
   nicht ab, sondern gibt klare Anweisungen.
 * Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
 * Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
-* Responsive UI: Dank Multithereading (SwingWorker) bleibt die Benutzeroberfläche auch während laufender API-Abfrage
+* Responsive UI: Dank Multithreading (SwingWorker) bleibt die Benutzeroberfläche auch während laufender API-Abfrage
   jederzeit reaktionsschnell und friert nicht ein.
 
 🛠 Technische Details
