@@ -13,12 +13,16 @@ Netzwerkschnittstellen zu visualisieren.
   nicht ab, sondern gibt klare Anweisungen.
 * Live-Daten: Nutzung einer API für aktuelle Wechselkurse.
 * Offline-Modus: Funktioniert dank GSON-Caching auch ohne Internet.
+* Responsive UI: Dank Multithreading (SwingWorker) bleibt die Benutzeroberfläche auch während laufender API-Abfrage
+  jederzeit reaktionsschnell und friert nicht ein.
 
 🛠 Technische Details
 
 • Sprache: Java
 
 • Framework: Swing (GUI)
+
+• Asynchrones Laden: Entlasstung der Event Dispatch Threade (EDT) durch asynchrone API-Abfrage. 
 
 • Layout: GridBagLayout für eine präzise Anordnung der Komponenten.
 
@@ -27,7 +31,7 @@ Netzwerkschnittstellen zu visualisieren.
 • Workflows Actions: (maven.yml) - (release.yml)
 
 
-🛠 Setup
+🚀 **Setup**
 
 Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
 
@@ -46,6 +50,7 @@ visualize concepts such as data caching and network interfaces.
   the program doesn't crash, but instead gives clear instructions.
 * Live-data: Uses an API for current exchange rates.
 * Offline mode: Works even without an internet connection thank to GSON caching.
+* Responsive UI: Background data fetching via SwingWorker ensures the interface never freezes during API calls.
 
 
 • 🛠 Technical Details
@@ -54,6 +59,8 @@ visualize concepts such as data caching and network interfaces.
 
 • Framework: Swing (GUI)
 
+• Asynchronous Loading: Offloading network tasks from the Event Dispatch Thread (EDT) for a smooth user experience.
+
 • Layout: GridBagLayout for precise component positioning.
 
 • Build-Tool: Maven (pom.xml)
@@ -61,7 +68,7 @@ visualize concepts such as data caching and network interfaces.
 • Workflows Actions: (maven.yml) - (release.yml)
 
 
-🛠 Setup
+🚀 **Setup**
 
 The project uses Maven. Simply open it in IntelliJ - all dependencies (JSON) will load automatically.
 
@@ -99,6 +106,6 @@ Error Handling<br>
 <img width="711" height="704" alt="screenshot5" src="https://github.com/user-attachments/assets/14657166-9b19-4c22-9d65-b91f0cde2a93" />
 
 
-🛠 Setup
+🚀 **Setup**
 
 Das Projekt nutzt Maven. Einfach in IntelliJ öffnen – alle Abhängigkeiten (GSON) laden automatisch!
