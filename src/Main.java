@@ -36,6 +36,7 @@ public class Main {
        } catch (Exception e) {
             e.printStackTrace();
         }
+        //initialisiereKurs();
         openUI();
         ladeKurseImHintergrund();
         });
@@ -48,7 +49,7 @@ public class Main {
                 initialisiereKurs();
                 return null;
             }
-            @Override
+         @Override
             protected void done() {
                 if (istLive) {
                     bemerkungsField.setText("Kurse geladen! Stand: " + zeitstempel);
@@ -56,10 +57,10 @@ public class Main {
                 } else {
                     bemerkungsField.setText(" Stand: " + zeitstempel + "( du bist offline )");
                     bemerkungsField.setForeground(Color.RED);
-                }
-            }
+              }
+           }
         };
-            worker.execute();
+           worker.execute();
     }
     public static void initialisiereKurs() {
         try {
@@ -180,7 +181,6 @@ public class Main {
                     betragField.setText("");
                     betragField.requestFocusInWindow();
                     ergebnisField.setForeground(Color.RED);
-
                 }
             }
         });
