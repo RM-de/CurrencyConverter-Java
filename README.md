@@ -1,6 +1,4 @@
-<p align="center">
- <img src="Currency Converter-3" src="https://github.com/user-attachments/assets/3f873c09-8868-471d-a0b3-189b6cc4990e" />
-" alt="Banner" width="100%" height="300px" style="object-fit: cover;"></p> 
+
  
 💱 Currency Converter (Java)
  
