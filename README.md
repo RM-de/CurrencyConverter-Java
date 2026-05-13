@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Currency Converter.png" alt="Banner" style="width: 100%; border: none; display: block; background-color: transparent; filter: drop-shadow(0 0 0 transparent);"></p>
+  <img src="Currency Converter.png" alt="Banner" style="width: 150%; border: none; display: block; background-color: transparent; filter: drop-shadow(0 0 0 transparent);"></p>
   
 💱 Currency Converter (Java)
 🇩🇪 Deutsch 
