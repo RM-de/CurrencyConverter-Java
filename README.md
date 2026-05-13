@@ -1,6 +1,6 @@
 <p align="center">
-<img src="Currency Converter.png" alt="Banner" width="120%" height="400px" style="object-fit: cover;"></p>
-
+  <img src="Currency Converter.png" alt="Banner" style="width: 100%; border: none; display: block; background-color: transparent; filter: drop-shadow(0 0 0 transparent);"></p>
+  
 💱 Currency Converter (Java)
 🇩🇪 Deutsch 
 
