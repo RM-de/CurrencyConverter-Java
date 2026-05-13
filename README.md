@@ -1,3 +1,5 @@
+<p align="center"> <img src="Currency Converter.png" alt="Currency Converter Banner" widht="100%"></p>
+
 💱 Currency Converter (Java)
 
 🇩🇪 Deutsch 
