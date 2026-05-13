@@ -1,4 +1,5 @@
- 
+<p align="center">
+ <img src="Currency Converter-3.png" alt="Banner" width="100%" height="400px" style="object-fit: cover;"></p>
  
 💱 Currency Converter (Java)
  
