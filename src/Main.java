@@ -36,7 +36,7 @@ public class Main {
        } catch (Exception e) {
             e.printStackTrace();
         }
-        //initialisiereKurs();
+
         openUI();
         ladeKurseImHintergrund();
         });
@@ -52,7 +52,7 @@ public class Main {
          @Override
             protected void done() {
                 if (istLive) {
-                    bemerkungsField.setText("Kurse geladen! Stand: " + zeitstempel);
+                    bemerkungsField.setText(" Kurse geladen! Stand: " + zeitstempel);
                     bemerkungsField.setForeground(new Color(0, 150, 0));
                 } else {
                     bemerkungsField.setText(" Stand: " + zeitstempel + "( du bist offline )");
@@ -101,7 +101,7 @@ public class Main {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 40, 5, 40);
-        Dimension feldGroße = new Dimension(450, 40);
+        Dimension feldGroße = new Dimension(400, 42);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         text = new JLabel("Währung Rechnen");
         text.setForeground(Color.WHITE);
@@ -109,43 +109,49 @@ public class Main {
         text.setFont(new Font("Arial", Font.BOLD, 20));
         text.setPreferredSize(feldGroße);
         Color denimBlue = new Color(30, 80, 100);
+        //Color blue = new Color ( 10, 50,60);
         frame.getContentPane().setBackground(denimBlue);
         ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
+        //frame.setBackground(new Color(0, 255, 0));
 
         betragField = new JTextField();
         betragField.setPreferredSize(feldGroße);
-        betragField.setFont(new Font("Arial", Font.PLAIN, 16));
+        betragField.setFont(new Font("Arial", Font.PLAIN, 18));
         Border linie = BorderFactory.createLineBorder(Color.WHITE,1);
         Border abstand = BorderFactory.createEmptyBorder(0,7,0,0);
         betragField.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
 
+
+        WaehrungsRenderer renderer = new WaehrungsRenderer();
         JComboBox<String> box1 = new JComboBox<>(Währungen);
+        box1.setRenderer(renderer);
         box1.setPreferredSize(feldGroße);
         box1.setMaximumRowCount(20);
-        box1.setFont(new Font("Arial" , Font.PLAIN,14));
-        box1.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
+        box1.setFont(new Font("Arial" , Font.PLAIN,18));
+        box1.setBackground(Color.WHITE);
 
         JComboBox<String> box2 = new JComboBox<>(Währungen);
+        box2.setRenderer(renderer);
         box2.setPreferredSize(feldGroße);
         box2.setMaximumRowCount(20);
-        box2.setFont(new Font("Arial" , Font.PLAIN,14));
-        box2.setBorder(null);
-        box2.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
+        box2.setFont(new Font("Arial" , Font.PLAIN,18));
+        box2.setBackground(Color.WHITE);
 
-        JTextField ergebnisField = new JTextField(" Ergebnis:");
-        ergebnisField.setFont(new Font("Arial", Font.PLAIN, 16));
+
+        ergebnisField = new JTextField(" Ergebnis:");
+        ergebnisField.setFont(new Font("Arial", Font.PLAIN, 18));
         ergebnisField.setPreferredSize(feldGroße);
         ergebnisField.setEditable(false);
         ergebnisField.setBackground(Color.WHITE);
 
         bemerkungsField = new JTextField(" Bemerkungen:");
-        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 15));
+        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 17));
         bemerkungsField.setPreferredSize(feldGroße);
         bemerkungsField.setEditable(false);
         bemerkungsField.setBackground(Color.WHITE);
 
         button = new JButton("Klicken");
-        button.setFont(new Font("Arial", Font.PLAIN, 16));
+        button.setFont(new Font("Arial", Font.BOLD, 18));
         button.setPreferredSize(feldGroße);
 
         button.addActionListener(new ActionListener() {
@@ -309,4 +315,49 @@ public class Main {
             }
         }
     }
+
+    static class WaehrungsRenderer extends DefaultListCellRenderer {
+        private final Map<String, Icon> flaggenCache = new HashMap<>();
+
+        public WaehrungsRenderer() {
+            for (String waehrung : Main.Währungen) {
+                try {
+                    String pfad = "icons/" + waehrung + ".png";
+                    java.io.File datei = new java.io.File(pfad);
+
+                    if (datei.exists()) {
+                        java.net.URL url = datei.toURI().toURL();
+                        Icon icon = new com.formdev.flatlaf.extras.FlatSVGIcon(url);
+
+
+                        com.formdev.flatlaf.extras.FlatSVGIcon svgIcon =  new com.formdev.flatlaf.extras.FlatSVGIcon(url);
+
+                        flaggenCache.put(waehrung, svgIcon.derive(35, 35));
+                    } else {
+                        flaggenCache.put(waehrung, null);
+                    }
+                } catch (Exception e) {
+                    flaggenCache.put(waehrung, null);
+                }
+            }
+        }
+
+        @Override
+        public Component getListCellRendererComponent(JList<?> list, Object value, int index,
+                                                      boolean isSelected, boolean cellHasFocus) {
+            JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            if (value instanceof String) {
+                String waehrung = (String) value;
+                label.setText(waehrung);
+                Icon icon = flaggenCache.get(waehrung);
+                label.setIcon(icon);
+                label.setIconTextGap(8);
+                label.setBorder(BorderFactory.createEmptyBorder(0,5,0,0));
+                label.setBackground(Color.WHITE);
+
+            }
+            return label;
+        }
+    }
+
 }
