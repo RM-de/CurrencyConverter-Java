@@ -54,7 +54,8 @@ public class Main {
             @Override
             protected void done() {
                 if (istLive) {
-                    bemerkungsField.setText("Kurse geladen! Stand: " + zeitstempel);
+                    bemerkungsField.setText(" Kurse geladen! Stand: " + zeitstempel);
+                    bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 20));
                     bemerkungsField.setForeground(new Color(0, 150, 0));
                 } else {
                     bemerkungsField.setText(" Stand: " + zeitstempel + "( du bist offline )");
@@ -118,7 +119,7 @@ public class Main {
 
         betragField = new JTextField();
         betragField.setPreferredSize(feldGroße);
-        betragField.setFont(new Font("Arial", Font.PLAIN, 18));
+        betragField.setFont(new Font("Arial", Font.PLAIN, 20));
         Border linie = BorderFactory.createLineBorder(Color.WHITE,1);
         Border abstand = BorderFactory.createEmptyBorder(0,7,0,0);
         betragField.setBorder(BorderFactory.createCompoundBorder(linie, abstand));
@@ -141,19 +142,19 @@ public class Main {
 
 
         ergebnisField = new JTextField(" Ergebnis:");
-        ergebnisField.setFont(new Font("Arial", Font.PLAIN, 18));
+        ergebnisField.setFont(new Font("Arial", Font.PLAIN, 20));
         ergebnisField.setPreferredSize(feldGroße);
         ergebnisField.setEditable(false);
         ergebnisField.setBackground(Color.WHITE);
 
         bemerkungsField = new JTextField(" Bemerkungen:");
-        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 15));
+        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 18));
         bemerkungsField.setPreferredSize(feldGroße);
         bemerkungsField.setEditable(false);
         bemerkungsField.setBackground(Color.WHITE);
 
         button = new JButton("Klicken");
-        button.setFont(new Font("Arial", Font.PLAIN, 16));
+        button.setFont(new Font("Arial", Font.BOLD, 22));
         button.setPreferredSize(feldGroße);
 
         button.addActionListener(new ActionListener() {
