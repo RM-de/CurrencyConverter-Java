@@ -19,7 +19,7 @@ public class Main {
     private static boolean istLive = false;
     private static String zeitstempel = "unbekannt";
     static String[] Währungen = {"EUR", "USD", "AUD", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
-                   "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR"};
+            "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR"};
     static JFrame frame;
     static JLabel text;
     static JTextField betragField;
@@ -37,10 +37,11 @@ public class Main {
             e.printStackTrace();
         }
 
-        openUI();
-        ladeKurseImHintergrund();
+       openUI();
+            ladeKurseImHintergrund();
         });
     }
+
     private static void ladeKurseImHintergrund() {
         SwingWorker<Void, Void> worker = new SwingWorker<>() {
 
@@ -49,19 +50,21 @@ public class Main {
                 initialisiereKurs();
                 return null;
             }
-         @Override
+
+            @Override
             protected void done() {
                 if (istLive) {
-                    bemerkungsField.setText(" Kurse geladen! Stand: " + zeitstempel);
+                    bemerkungsField.setText("Kurse geladen! Stand: " + zeitstempel);
                     bemerkungsField.setForeground(new Color(0, 150, 0));
                 } else {
                     bemerkungsField.setText(" Stand: " + zeitstempel + "( du bist offline )");
                     bemerkungsField.setForeground(Color.RED);
-              }
-           }
+                }
+            }
         };
-           worker.execute();
+        worker.execute();
     }
+
     public static void initialisiereKurs() {
         try {
             URL url = new URL("https://api.frankfurter.app/latest?from=EUR");
@@ -83,7 +86,7 @@ public class Main {
             java.time.format.DateTimeFormatter formater = java.time.format.DateTimeFormatter.ofPattern(" dd.MM.yyyy - HH:mm ");
             zeitstempel = jetzt.format(formater);
             speichereKurseLokal();
-            System.out.println("[System] Verbindung erfolgreich: " + wechselkurse.size() / 2  + " Handelspaare geladen.");
+            System.out.println("[System] Verbindung erfolgreich: " + wechselkurse.size() / 2 + " Handelspaare geladen.");
         } catch (Exception e) {
 
             istLive = false;
@@ -94,6 +97,7 @@ public class Main {
             }
         }
     }
+
     public static void openUI() {
 
         frame = new JFrame("Währungsrechner!");
@@ -101,7 +105,7 @@ public class Main {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(5, 40, 5, 40);
-        Dimension feldGroße = new Dimension(400, 42);
+        Dimension feldGroße = new Dimension(450, 45);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         text = new JLabel("Währung Rechnen");
         text.setForeground(Color.WHITE);
@@ -109,10 +113,8 @@ public class Main {
         text.setFont(new Font("Arial", Font.BOLD, 20));
         text.setPreferredSize(feldGroße);
         Color denimBlue = new Color(30, 80, 100);
-        //Color blue = new Color ( 10, 50,60);
         frame.getContentPane().setBackground(denimBlue);
         ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
-        //frame.setBackground(new Color(0, 255, 0));
 
         betragField = new JTextField();
         betragField.setPreferredSize(feldGroße);
@@ -145,13 +147,13 @@ public class Main {
         ergebnisField.setBackground(Color.WHITE);
 
         bemerkungsField = new JTextField(" Bemerkungen:");
-        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 17));
+        bemerkungsField.setFont(new Font("Arial", Font.PLAIN, 15));
         bemerkungsField.setPreferredSize(feldGroße);
         bemerkungsField.setEditable(false);
         bemerkungsField.setBackground(Color.WHITE);
 
         button = new JButton("Klicken");
-        button.setFont(new Font("Arial", Font.BOLD, 18));
+        button.setFont(new Font("Arial", Font.PLAIN, 16));
         button.setPreferredSize(feldGroße);
 
         button.addActionListener(new ActionListener() {
@@ -173,7 +175,7 @@ public class Main {
                     if (istLive) {
                         bemerkungsField.setText(" Stand: " + klickZeit + " Uhr ");
                     } else {
-                        bemerkungsField.setText(" Stand " + zeitstempel  + " Uhr ( Du bist offline )");
+                        bemerkungsField.setText(" Stand " + zeitstempel + " Uhr ( Du bist offline )");
                     }
                     ergebnisField.setText(String.format(" %.2f ", ergebnis) + " " + zu + " " + statusAnzeige);
                     System.out.println(" Klick um : " + klickZeit + " Ergebnis berechnet!");
@@ -193,7 +195,7 @@ public class Main {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(30, 50, 5,50 );
+        gbc.insets = new Insets(30, 50, 5, 50);
         gbc.gridwidth = 1;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
@@ -203,7 +205,7 @@ public class Main {
         gbc.gridx = 0;
         gbc.gridy = 1;
         text.setHorizontalAlignment(JLabel.CENTER);
-        gbc.insets = new Insets(5, 50, 5,50 );
+        gbc.insets = new Insets(5, 50, 5, 50);
         gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.weightx = 0.0;
@@ -257,6 +259,7 @@ public class Main {
         betragField.requestFocusInWindow();
         frame.setVisible(true);
     }
+
     public static double getWechselkurs(String von, String zu) {
         if (von.equals(zu))
             return 1.0;
@@ -268,7 +271,7 @@ public class Main {
         String eurZuZiel = "EUR_" + zu;
         if (wechselkurse.containsKey(vonZuEur) &&
                 wechselkurse.containsKey(eurZuZiel)) {
-            return  wechselkurse.get(vonZuEur) * wechselkurse.get(eurZuZiel);
+            return wechselkurse.get(vonZuEur) * wechselkurse.get(eurZuZiel);
         }
         return 1.0;
     }
@@ -288,6 +291,7 @@ public class Main {
             System.out.println(" Fehler beim Speichern: " + e.getMessage());
         }
     }
+
     private static void ladeLokalenCache() {
 
         try (java.io.FileReader reader = new java.io.FileReader(" kurse_cache.json ")) {
@@ -305,12 +309,13 @@ public class Main {
 
                 wechselkurse = gson.fromJson(kurseJson, type);
             }
-            System.out.println(" Cache erfolgreich geladen! Stand von: " + zeitstempel );
+            System.out.println(" Cache erfolgreich geladen! Stand von: " + zeitstempel);
 
         } catch (Exception e) {
 
             System.out.println(" Fehler beim Laden des Caches: " + e.getMessage());
-            if ( zeitstempel == null || zeitstempel .isEmpty());  {
+            if (zeitstempel == null || zeitstempel.isEmpty()) ;
+            {
                 zeitstempel = " unbekannt ";
             }
         }
@@ -330,9 +335,9 @@ public class Main {
                         Icon icon = new com.formdev.flatlaf.extras.FlatSVGIcon(url);
 
 
-                        com.formdev.flatlaf.extras.FlatSVGIcon svgIcon =  new com.formdev.flatlaf.extras.FlatSVGIcon(url);
+                        com.formdev.flatlaf.extras.FlatSVGIcon svgIcon = new com.formdev.flatlaf.extras.FlatSVGIcon(url);
 
-                        flaggenCache.put(waehrung, svgIcon.derive(35, 35));
+                        flaggenCache.put(waehrung, svgIcon.derive(37, 37));
                     } else {
                         flaggenCache.put(waehrung, null);
                     }
@@ -352,12 +357,10 @@ public class Main {
                 Icon icon = flaggenCache.get(waehrung);
                 label.setIcon(icon);
                 label.setIconTextGap(8);
-                label.setBorder(BorderFactory.createEmptyBorder(0,5,0,0));
+                label.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
                 label.setBackground(Color.WHITE);
-
             }
             return label;
         }
     }
-
 }
