@@ -108,9 +108,9 @@ public class Main {
         text.setHorizontalAlignment(JLabel.CENTER);
         text.setFont(new Font("Arial", Font.BOLD, 20));
         text.setPreferredSize(feldGroße);
-        //Color denimBlue = new Color(30, 80, 100);
-        Color green = new Color ( 50, 100,30);
-        frame.getContentPane().setBackground(green);
+        Color denimBlue = new Color(30, 80, 100);
+        //Color blue = new Color ( 10, 50,60);
+        frame.getContentPane().setBackground(denimBlue);
         ((JComponent)frame.getContentPane()).setBorder(BorderFactory.createLineBorder(Color.WHITE,1));
         //frame.setBackground(new Color(0, 255, 0));
 
@@ -332,7 +332,7 @@ public class Main {
 
                         com.formdev.flatlaf.extras.FlatSVGIcon svgIcon =  new com.formdev.flatlaf.extras.FlatSVGIcon(url);
 
-                        flaggenCache.put(waehrung, svgIcon.derive(42, 34));
+                        flaggenCache.put(waehrung, svgIcon.derive(35, 35));
                     } else {
                         flaggenCache.put(waehrung, null);
                     }
