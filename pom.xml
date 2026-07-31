@@ -38,6 +38,14 @@
    <build>
        <sourceDirectory>src</sourceDirectory>
        <finalName>CurrencyConverter</finalName>
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <includes>
+                    <include>icons/**</include>
+                </includes>
+            </resource>
+        </resources>
        <plugins>
            <plugin>
                <groupId>org.apache.maven.plugins</groupId>

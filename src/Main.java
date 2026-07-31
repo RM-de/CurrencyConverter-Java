@@ -3,14 +3,12 @@ import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
 import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
 import javax.swing.border.Border;
 
 public class Main {
@@ -327,22 +325,18 @@ public class Main {
 
     static class WaehrungsRenderer extends DefaultListCellRenderer {
         private final Map<String, Icon> flaggenCache = new HashMap<>();
-
         public WaehrungsRenderer() {
             for (String waehrung : Main.Währungen) {
                 try {
-                    String pfad = "icons/" + waehrung + ".png";
-                    java.io.File datei = new java.io.File(pfad);
+                    // Genau hier wird der saubere Einzeiler genutzt!
+                    String pfad = "/icons/" + waehrung + ".png";
+                    java.net.URL imgURL = Main.class.getResource(pfad);
 
-                    if (datei.exists()) {
-                        java.net.URL url = datei.toURI().toURL();
-                        Icon icon = new com.formdev.flatlaf.extras.FlatSVGIcon(url);
-
-
-                        com.formdev.flatlaf.extras.FlatSVGIcon svgIcon = new com.formdev.flatlaf.extras.FlatSVGIcon(url);
-
+                    if (imgURL != null) {
+                        com.formdev.flatlaf.extras.FlatSVGIcon svgIcon = new com.formdev.flatlaf.extras.FlatSVGIcon(imgURL);
                         flaggenCache.put(waehrung, svgIcon.derive(37, 37));
                     } else {
+                        System.out.println("Flagge nicht gefunden: " + pfad);
                         flaggenCache.put(waehrung, null);
                     }
                 } catch (Exception e) {
