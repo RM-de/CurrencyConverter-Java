@@ -355,7 +355,7 @@ public class Main {
                 Icon icon = flaggenCache.get(waehrung);
                 label.setIcon(icon);
                 label.setIconTextGap(8);
-                label.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
+                label.setBorder(BorderFactory.createEmptyBorder(2, 5, 2, 2));
                 label.setBackground(Color.WHITE);
             }
             return label;
