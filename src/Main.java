@@ -17,7 +17,7 @@ public class Main {
     private static boolean istLive = false;
     private static String zeitstempel = "unbekannt";
     static String[] Währungen = {"EUR", "USD", "AUD", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
-            "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOk", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR"};
+            "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR"};
     static JFrame frame;
     static JLabel text;
     static JTextField betragField;
