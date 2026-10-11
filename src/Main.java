@@ -16,8 +16,20 @@ public class Main {
     static Map<String, Double> wechselkurse = new HashMap<>();
     private static boolean istLive = false;
     private static String zeitstempel = "unbekannt";
-    static String[] Währungen = {"EUR", "USD", "AUD", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "GBP", "HKD", "HUF", "IDR", "ILS",
-            "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR"};
+    static String[] Währungen = {
+
+
+            "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD",
+            "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUP", "CVE",
+            "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "FOK", "GBP", "GEL", "GGP", "GHS", "GIP",
+            "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP",
+            "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KID", "KMF", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL",
+            "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN",
+            "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF",
+            "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLE", "SLL", "SOS", "SRD", "SSP", "STN", "SYP", "SZL", "THB", "TJS",
+            "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VES", "VND", "VUV", "WST",
+            "XAF", "XCD", "XOF", "XPF", "ZAR", "ZMW", "ZWL"
+    };
     static JFrame frame;
     static JLabel text;
     static JTextField betragField;
@@ -63,21 +75,25 @@ public class Main {
         };
         worker.execute();
     }
-
     public static void initialisiereKurs() {
         try {
-            URL url = new URL("https://api.frankfurter.app/latest?from=EUR");
+            // Neuer v2 Endpoint für EUR-Kurse
+            URL url = new URL("https://api.frankfurter.dev/v2/rates?base=EUR");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
             InputStreamReader reader = new InputStreamReader(conn.getInputStream());
-            JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
-            JsonObject rates = jsonObject.getAsJsonObject("rates");
+            // v2 gibt ein JSON-Array zurück
+            com.google.gson.JsonArray ratesArray = JsonParser.parseReader(reader).getAsJsonArray();
 
-            for (String key : rates.keySet()) {
-                double kurs = rates.get(key).getAsDouble();
-                wechselkurse.put("EUR_" + key, kurs);
-                wechselkurse.put(key + "_EUR", 1.0 / kurs);
+            // Über alle Währungspaare iterieren
+            for (com.google.gson.JsonElement elem : ratesArray) {
+                JsonObject item = elem.getAsJsonObject();
+                String target = item.get("quote").getAsString();
+                double kurs = item.get("rate").getAsDouble();
+
+                wechselkurse.put("EUR_" + target, kurs);
+                wechselkurse.put(target + "_EUR", 1.0 / kurs);
             }
 
             istLive = true;
@@ -87,7 +103,6 @@ public class Main {
             speichereKurseLokal();
             System.out.println("[System] Verbindung erfolgreich: " + wechselkurse.size() / 2 + " Handelspaare geladen.");
         } catch (Exception e) {
-
             istLive = false;
             ladeLokalenCache();
             if (wechselkurse.isEmpty()) {
@@ -96,6 +111,9 @@ public class Main {
             }
         }
     }
+
+
+
 
     public static void openUI() {
 
@@ -324,19 +342,63 @@ public class Main {
     }
 
     static class WaehrungsRenderer extends DefaultListCellRenderer {
-        private final Map<String, Icon> flaggenCache = new HashMap<>();
-        public WaehrungsRenderer() {
+    private final Map<String, Icon> flaggenCache = new HashMap<>();
+        //  public WaehrungsRenderer() {
+        //  for (String waehrung : Main.Währungen) {
+        //      try {
+        // Genau hier wird der saubere Einzeiler genutzt!
+        //       String pfad = "/icons/" + waehrung + ".png";
+        //     java.net.URL imgURL = Main.class.getResource(pfad);
+
+        //       if (imgURL != null) {
+        //           com.formdev.flatlaf.extras.FlatSVGIcon svgIcon = new com.formdev.flatlaf.extras.FlatSVGIcon(imgURL);
+        //           flaggenCache.put(waehrung, svgIcon.derive(37, 37));
+        //      } else {
+        //         System.out.println("Flagge nicht gefunden: " + pfad);
+
+        //          flaggenCache.put(waehrung, null);
+        //       }
+        //  } catch (Exception e) {
+        //      flaggenCache.put(waehrung, null);
+        //      }
+        //    }
+        // }
+
+public WaehrungsRenderer() {
             for (String waehrung : Main.Währungen) {
                 try {
-                    // Genau hier wird der saubere Einzeiler genutzt!
                     String pfad = "/icons/" + waehrung + ".png";
                     java.net.URL imgURL = Main.class.getResource(pfad);
 
                     if (imgURL != null) {
-                        com.formdev.flatlaf.extras.FlatSVGIcon svgIcon = new com.formdev.flatlaf.extras.FlatSVGIcon(imgURL);
-                        flaggenCache.put(waehrung, svgIcon.derive(37, 37));
+                        Image srcImg = new ImageIcon(imgURL).getImage();
+
+                        // 1. Zielgröße auf dem Bildschirm
+                        int zielGroesse = 38;
+                        // 2. Erzeuge ein hochauflösendes Zwischenbild (2x für Retina/High-DPI Schärfe)
+                        int hiDpiGroesse = zielGroesse * 2;
+
+                        java.awt.image.BufferedImage kreisBild = new java.awt.image.BufferedImage(
+                                hiDpiGroesse, hiDpiGroesse, java.awt.image.BufferedImage.TYPE_INT_ARGB);
+
+                        Graphics2D g2 = kreisBild.createGraphics();
+
+                        // Maximale Schärfe & Anti-Aliasing aktivieren
+                        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                        g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+                        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+                        g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+
+                        // Perfekten Kreis ausschneiden
+                        g2.setClip(new java.awt.geom.Ellipse2D.Double(0, 0, hiDpiGroesse, hiDpiGroesse));
+                        g2.drawImage(srcImg, 0, 0, hiDpiGroesse, hiDpiGroesse, null);
+                        g2.dispose();
+
+                        // Sanftes, scharfes Herunterskalieren auf die Zielgröße
+                        Image scharfesBild = kreisBild.getScaledInstance(zielGroesse, zielGroesse, Image.SCALE_SMOOTH);
+
+                        flaggenCache.put(waehrung, new ImageIcon(scharfesBild));
                     } else {
-                        System.out.println("Flagge nicht gefunden: " + pfad);
                         flaggenCache.put(waehrung, null);
                     }
                 } catch (Exception e) {
@@ -345,20 +407,21 @@ public class Main {
             }
         }
 
-        @Override
-        public Component getListCellRendererComponent(JList<?> list, Object value, int index,
-                                                      boolean isSelected, boolean cellHasFocus) {
-            JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-            if (value instanceof String) {
-                String waehrung = (String) value;
-                label.setText(waehrung);
-                Icon icon = flaggenCache.get(waehrung);
-                label.setIcon(icon);
-                label.setIconTextGap(8);
-                label.setBorder(BorderFactory.createEmptyBorder(2, 5, 2, 2));
-                label.setBackground(Color.WHITE);
+
+            @Override
+            public Component getListCellRendererComponent(JList<?> list, Object value, int index,
+                                                          boolean isSelected, boolean cellHasFocus) {
+                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                if (value instanceof String) {
+                    String waehrung = (String) value;
+                    label.setText(waehrung);
+                    Icon icon = flaggenCache.get(waehrung);
+                    label.setIcon(icon);
+                    label.setIconTextGap(12);
+                    label.setBorder(BorderFactory.createEmptyBorder(3, 5, 3, 3));
+                    label.setBackground(Color.WHITE);
+                }
+                return label;
             }
-            return label;
         }
     }
-}
